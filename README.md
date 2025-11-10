@@ -40,52 +40,20 @@ A **CareLink API** fornece um backend robusto para gerenciar o fluxo de agendame
 -   JDBC Driver - Oracle
 -   Maven
 
-## Executando a Aplicação em Modo de Desenvolvimento
+## Como executar o projeto
 
-Você pode executar a aplicação em modo de desenvolvimento, que ativa o live coding, usando:
+Para executar a aplicação em modo de desenvolvimento, que ativa o live coding, siga os passos abaixo:
 
-```shell script
-./mvnw quarkus:dev
-```
+1.  **Instale as dependências do projeto:**
+    Execute o comando a seguir para baixar as dependências e compilar o código-fonte.
 
-> **_NOTA:_** O Quarkus inclui uma Dev UI, disponível apenas no modo de desenvolvimento em <http://localhost:8080/q/dev/>.
+    ```shell script
+    mvn install
+    ```
 
-## Empacotando e Executando a Aplicação
+2.  **Inicie a aplicação:**
+    Após a instalação, inicie o Quarkus em modo de desenvolvimento.
 
-A aplicação pode ser empacotada usando:
-
-```shell script
-./mvnw package
-```
-
-Isso produz o arquivo `quarkus-run.jar` no diretório `target/quarkus-app/`. As dependências são copiadas para o diretório `target/quarkus-app/lib/`.
-
-A aplicação pode ser executada com:
-
-```shell
-java -jar target/quarkus-app/quarkus-run.jar
-```
-
-Para construir um _über-jar_, execute o seguinte comando:
-
-```shell script
-./mvnw package -Dquarkus.package.jar.type=uber-jar
-```
-
-A aplicação, empacotada como um _über-jar_, pode ser executada com `java -jar target/*-runner.jar`.
-
-## Criando um Executável Nativo
-
-Você pode criar um executável nativo usando:
-
-```shell script
-./mvnw package -Dnative
-```
-
-Ou, se você não tiver o GraalVM instalado, pode construir o executável nativo em um contêiner usando:
-
-```shell script
-./mvnw package -Dnative -Dquarkus.native.container-build=true
-```
-
-Você pode então executar seu executável nativo com: `./target/carelink-api-1.0.0-SNAPSHOT-runner`
+    ```shell script
+    mvn quarkus:dev
+    ```
